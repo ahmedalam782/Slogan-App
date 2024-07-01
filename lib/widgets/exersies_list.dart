@@ -17,7 +17,7 @@ class ExerciseList extends StatelessWidget {
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => const ExercisePage(
-              exersiceType: "Chest",
+              exerciseType: "Chest",
             ),
           ),
         ),
@@ -29,7 +29,7 @@ class ExerciseList extends StatelessWidget {
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => const ExercisePage(
-              exersiceType: "Back",
+              exerciseType: "Back",
             ),
           ),
         ),
@@ -41,7 +41,7 @@ class ExerciseList extends StatelessWidget {
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => const ExercisePage(
-              exersiceType: "Biceps",
+              exerciseType: "Biceps",
             ),
           ),
         ),
@@ -53,7 +53,7 @@ class ExerciseList extends StatelessWidget {
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => const ExercisePage(
-              exersiceType: "Shoulder",
+              exerciseType: "Shoulder",
             ),
           ),
         ),
@@ -65,19 +65,18 @@ class ExerciseList extends StatelessWidget {
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => const ExercisePage(
-              exersiceType: "Legs",
+              exerciseType: "Legs",
             ),
           ),
         ),
       ),
     ];
-
-    return Expanded(
-      child: ListView.builder(
-        itemBuilder: (context, index) => ExerciseWidgets(
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        childCount: exerciseModel.length,
+        (context, index) => ExerciseWidgets(
           exerciseModel: exerciseModel[index],
         ),
-        itemCount: exerciseModel.length,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:slogan_app/Models/exercise_model.dart';
 
 class ExerciseWidgets extends StatelessWidget {
@@ -19,48 +20,55 @@ class ExerciseWidgets extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width / 20,
-              vertical: MediaQuery.sizeOf(context).height / 26,
+              horizontal: 2.h,
+              vertical: 2.h,
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.asset(
                 exerciseModel.imageName,
-                fit: BoxFit.cover,
-                height: MediaQuery.sizeOf(context).height / 5,
+                fit: BoxFit.fill,
+                height: 19.h,
+                width: MediaQuery.sizeOf(context).width,
               ),
             ),
           ),
           Container(
-            height: MediaQuery.sizeOf(context).height / 8,
+            height: 10.h,
             padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width / 15,
+              horizontal: 3.h,
+              vertical: 2.h,
+            ),
+            margin: EdgeInsets.symmetric(
+              horizontal: 2.h,
+              vertical: 2.h,
             ),
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.black.withOpacity(.7),
+              borderRadius: BorderRadius.circular(2.h),
+              color: Colors.black.withOpacity(.5),
             ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   exerciseModel.exercisesTitle,
-                  style: const TextStyle(
-                      fontSize: 22,
+                  style: TextStyle(
+                      fontSize: 18.sp,
                       color: Colors.white,
                       fontFamily: "SpaceMono",
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold),
                 ),
-                const Spacer(),
                 Text(
                   exerciseModel.exercisesNumber,
-                  style: const TextStyle(
-                      fontSize: 22,
-                      color: Colors.white,
-                      fontFamily: "SpaceMono",
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 18.sp,
+                    color: Colors.white,
+                    fontFamily: "SpaceMono",
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

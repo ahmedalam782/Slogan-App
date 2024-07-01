@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:slogan_app/Screens/splash_screen.dart';
 
 void main() {
@@ -10,9 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: SplashScreen(),
+        );
+      },
     );
   }
 }

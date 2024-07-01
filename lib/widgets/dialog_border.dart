@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text_form.dart';
+import '../Models/exercise_home_model.dart';
+import '../components/custom_text_form.dart';
 
 GlobalKey<FormState> form = GlobalKey();
-TextEditingController exerciseController = TextEditingController();
-TextEditingController dateController = TextEditingController();
 
 void showAlertDialog({
   required BuildContext context,
@@ -24,10 +23,11 @@ void showAlertDialog({
           title: const Text(
             "Enter the new exercise",
             style: TextStyle(
-                fontSize: 20,
-                fontFamily: "SpaceMono",
-                fontWeight: FontWeight.bold,
-                color: Colors.green),
+              fontSize: 20,
+              fontFamily: "SpaceMono",
+              fontWeight: FontWeight.bold,
+              color: Colors.green,
+            ),
           ),
           content: Form(
             key: form,
@@ -35,7 +35,6 @@ void showAlertDialog({
               mainAxisSize: MainAxisSize.min,
               children: [
                 CustomTextForm(
-                  hintText: 'Exercise',
                   labelText: "Exercise",
                   controller: exerciseController,
                   validator: (value) {
@@ -49,7 +48,6 @@ void showAlertDialog({
                   height: MediaQuery.sizeOf(context).height / 20,
                 ),
                 CustomTextForm(
-                  hintText: 'Date',
                   labelText: "Date",
                   controller: dateController,
                   validator: (value) {

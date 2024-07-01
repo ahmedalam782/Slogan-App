@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:slogan_app/Screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 3),
       () {
         return Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => HomeScreen()));
+            MaterialPageRoute(builder: (context) => const HomeScreen()));
       },
     );
   }
@@ -28,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Image.asset(
           "assets/splash.png",
-          height: MediaQuery.sizeOf(context).height / 2,
+          height: 40.h,
         ),
       ),
     );
