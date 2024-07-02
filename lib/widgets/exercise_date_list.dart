@@ -81,7 +81,7 @@ class _ExerciseDateListState extends State<ExerciseDateList> {
               trailing: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  fixedSize: Size(35.w, 6.h),
+                  fixedSize: Size(35.w, 10.w),
                 ),
                 onPressed: () {
                   if (exerciseModels[index].states == 'pending') {
